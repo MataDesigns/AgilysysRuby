@@ -19,11 +19,10 @@ module AgilysysSdk
     end
 
     class CreateOrder
-        attr_accessor :table_name, :employee_id, :guest_count
-        def initialize(table_name, employee_id, guest_count)
+        attr_accessor :table_name, :employee_id
+        def initialize(table_name, employee_id)
             @table_name = table_name
             @employee_id = employee_id
-            @guest_count = guest_count
         end
     end
 

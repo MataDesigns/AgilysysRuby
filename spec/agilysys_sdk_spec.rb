@@ -35,7 +35,7 @@ RSpec.describe AgilysysSdk do
     auth_code = "AUTH_CODE"
     sdk = AgilysysSdk::AgilysysSdk.new('AGILYSYS_URL', client_id, auth_code)
 
-    order = AgilysysSdk::CreateOrder.new("Tiki: 1234", "3005", "1")
+    order = AgilysysSdk::CreateOrder.new("Tiki: 1234", 3005)
     new_order_number = sdk.create_order(order)
     puts new_order_number
   end
