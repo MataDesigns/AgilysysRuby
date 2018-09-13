@@ -23,7 +23,7 @@ module AgilysysSdk
       response = @client.call('process-order-request-Body', 'process-order-request') { |xml| 
         xml.send("order-type","open")
         xml.send("order-header") {
-          xml.send("table_name", new_order.table_name)
+          xml.send("table-name", new_order.table_name)
           xml.send("employee-id", new_order.employee_id)
           xml.send("check-type-id", 1)
         }
