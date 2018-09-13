@@ -14,7 +14,7 @@ module AgilysysSdk
       response_xml_doc = Nokogiri::XML(response.read_body)
       orders = Array.new
       response_xml_doc.xpath("//order").each do |order|
-        orders.push(::AgilysysSdk::Order.new(order.attribute("order-number"),order.attribute("table"), order.attribute("employee-id")))
+        orders.push(::AgilysysSdk::Order.new(order.attribute("order-number").text,order.attribute("table").text, order.attribute("employee-id").text))
       end
       orders
     end

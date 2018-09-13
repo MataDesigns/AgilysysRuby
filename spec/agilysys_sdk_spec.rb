@@ -27,7 +27,7 @@ RSpec.describe AgilysysSdk do
     auth_code = "AUTH_CODE"
     sdk = AgilysysSdk::AgilysysSdk.new('AGILYSYS_URL', client_id, auth_code)
     orders = sdk.get_all_open_orders()
-    puts orders
+    puts orders.first.id
   end
 
   it "create order" do
