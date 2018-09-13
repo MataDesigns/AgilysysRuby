@@ -25,7 +25,6 @@ module AgilysysSdk
         xml.send("order-header") {
           xml.send("table_name", new_order.table_name)
           xml.send("employee-id", new_order.employee_id)
-          xml.send("guest-count", new_order.guest_count)
           xml.send("check-type-id", 1)
         }
       }
