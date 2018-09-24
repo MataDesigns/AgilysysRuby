@@ -3,6 +3,8 @@ RSpec.describe AgilysysSdk do
     expect(AgilysysSdk::VERSION).not_to be nil
   end
 
+  # Helpers
+
   it "build xml without body" do
     client_id = "3213143124"
     auth_code = "secret"
@@ -21,6 +23,8 @@ RSpec.describe AgilysysSdk do
     xml_with_body = api_client.build_xml('order-list-request-Body', 'order-list-request') { |xml| xml.send("order-search-criteria","")}
     expect(xml_with_body).to eq(doc.to_xml)
   end
+
+  # Orders
 
   it "get all orders" do
     client_id = "CLIENT_ID"
@@ -50,6 +54,15 @@ RSpec.describe AgilysysSdk do
     puts successful
 
     expect(successful).to eq(true)
+  end
+
+  # Employees
+
+  it "get all employees" do
+    client_id = "CLIENT_ID"
+    auth_code = "AUTH_CODE"
+    sdk = AgilysysSdk::AgilysysSdk.new('AGILYSYS_URL', client_id, auth_code)
+    employees = sdk.get_all_employees
   end
 
 end

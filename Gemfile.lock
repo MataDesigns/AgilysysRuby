@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    agilysys_sdk (0.1.0)
+    agilysys_sdk (0.1.4)
 
 GEM
   remote: https://rubygems.org/
@@ -36,4 +36,4 @@ DEPENDENCIES
   rspec (~> 3.0)
 
 BUNDLED WITH
-   1.16.2
+   1.16.4

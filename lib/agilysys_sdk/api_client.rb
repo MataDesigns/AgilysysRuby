@@ -32,8 +32,8 @@ module AgilysysSdk
       def call(body_tag, request_tag, &xml_body) 
         request = Net::HTTP::Post.new(@url)
         request["content-type"] = 'application/xml'
-        request.body = build_xml(body_tag, request_tag) {|xml| xml_body.call(xml)}
-        puts "Body: #{request.body}"
+        request.body = build_xml(body_tag, request_tag) {|xml| xml_body.call(xml) if !xml_body.nil?}
+        # puts "Body: #{request.body}"
         @http.request(request)
       end
     end
